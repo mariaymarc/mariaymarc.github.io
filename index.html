@@ -158,6 +158,9 @@ h2 .sn{font-family:var(--display)}
 .ph span{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
 .choices.three{grid-template-columns:repeat(3,1fr)}
 .choices.three .choice span{font-size:1.05rem}
+.church{margin:0}
+.church img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.church figcaption{color:rgba(238,234,219,.6);font-size:.72rem;margin-top:8px}
 /* Wide screens */
 @media (min-width:760px){
   body{font-size:16px}
@@ -267,10 +270,11 @@ h2 .sn{font-family:var(--display)}
 <section class="band cer" id="ceremonia">
   <div class="wrap">
     <div style="display:grid;gap:14px;align-content:start">
-      <h2><span class="sn">I.</span> Ceremonia en la iglesia XXXXXXX</h2>
-      <p class="meta"><span class="num">17:30</span> · Dirección por confirmar</p>
+      <h2><span class="sn">I.</span> Ceremonia en Sant Pere del Serrallo</h2>
+      <p class="meta"><span class="num">17:30</span> · El Serrallo, Tarragona</p>
+      <div><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Esgl%C3%A9sia+de+Sant+Pere+del+Serrallo+Tarragona" target="_blank" rel="noopener">Ver en Google Maps</a></div>
     </div>
-    <div class="ph" role="img" aria-label="Espacio para la foto de la iglesia"><span>Foto de la iglesia</span></div>
+    <figure class="church"><img src="img/iglesia.jpg" alt="Iglesia de Sant Pere del Serrallo, Tarragona" loading="lazy"><figcaption>Foto: Pere López (pere prlpz), Wikimedia Commons, CC BY-SA 3.0</figcaption></figure>
   </div>
 </section>
 
@@ -302,7 +306,7 @@ h2 .sn{font-family:var(--display)}
       <div><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Mas+La+Boella+La+Canonja" target="_blank" rel="noopener">Abrir en Google Maps</a></div>
     </div>
     <div class="ways">
-      <div class="way"><h3>En coche</h3><p>Unos <span class="num">XX</span> minutos desde la iglesia.</p></div>
+      <div class="way"><h3>En coche</h3><p>Unos <span class="num">15</span> minutos desde la iglesia.</p></div>
       <div class="way"><h3>Aparcamiento</h3><p>En la misma masía.</p></div>
       <div class="way"><h3>Sin coche</h3><p>Dínoslo en el formulario.</p></div>
     </div>
@@ -316,7 +320,7 @@ h2 .sn{font-family:var(--display)}
     </header>
     <div style="display:grid;gap:18px">
       <ol class="timeline">
-        <li><time>17:30</time><div><h3>Ceremonia</h3><p>Iglesia XXXXXXX</p></div></li>
+        <li><time>17:30</time><div><h3>Ceremonia</h3><p>Sant Pere del Serrallo</p></div></li>
         <li><time>19:00</time><div><h3>Cocktail</h3><p>Entre los olivos de Mas La Boella</p></div></li>
         <li><time>21:00</time><div><h3>Cena</h3><p>En la terraza de la masía</p></div></li>
         <li><time>23:30</time><div><h3>Fiesta</h3><p>Hasta que el cuerpo aguante</p></div></li>
