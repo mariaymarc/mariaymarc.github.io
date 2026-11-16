@@ -247,29 +247,11 @@ footer p{font-size:13.33px}
         <label for="acomp">Nombre de tus acompañantes</label>
         <input type="text" id="acomp" name="acomp">
       </div>
-      <div class="field yes-only hide">
-        <label for="ninos">Niños y edades</label>
-        <input type="text" id="ninos" name="ninos" placeholder="Ej.: 2 niños, de 4 y 7 años">
-      </div>
-      <fieldset class="field yes-only hide">
-        <legend>¿Vendrás a la ceremonia y a la celebración?</legend>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="partes" id="partes-ambas" value="Ambas"><span>A las dos</span></label>
-          <label class="choice"><input type="radio" name="partes" id="partes-masia" value="Solo a la masía"><span>Solo a la masía</span></label>
-        </div>
-      </fieldset>
       <fieldset class="field yes-only hide">
         <legend>¿Necesitas transporte de la iglesia a la masía?</legend>
         <div class="choices">
           <label class="choice"><input type="radio" name="transporte" id="transporte-si" value="Sí"><span>Sí</span></label>
           <label class="choice"><input type="radio" name="transporte" id="transporte-no" value="No"><span>No, tengo coche</span></label>
-        </div>
-      </fieldset>
-      <fieldset class="field yes-only hide">
-        <legend>¿Te quedas a dormir en la zona?</legend>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="dormir" id="dormir-si" value="Sí"><span>Sí</span></label>
-          <label class="choice"><input type="radio" name="dormir" id="dormir-no" value="No"><span>No</span></label>
         </div>
       </fieldset>
       <div class="field yes-only hide">
@@ -284,23 +266,11 @@ footer p{font-size:13.33px}
           <label class="choice"><input type="radio" name="menu" id="menu-veg" value="Vegetariano"><span>Vegetariano</span></label>
         </div>
       </fieldset>
-      <div class="field yes-only hide">
-        <label for="ciudad">¿Desde dónde vienes?</label>
-        <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad">
-      </div>
       <fieldset class="field yes-only hide">
         <legend>¿Llegas el día antes?</legend>
         <div class="choices">
           <label class="choice"><input type="radio" name="antes" id="antes-si" value="Sí"><span>Sí</span></label>
           <label class="choice"><input type="radio" name="antes" id="antes-no" value="No"><span>No</span></label>
-        </div>
-      </fieldset>
-      <fieldset class="field yes-only hide">
-        <legend>¿Bailarás hasta el final?</legend>
-        <div class="choices three">
-          <label class="choice"><input type="radio" name="baile" id="baile-si" value="Por supuesto"><span>Por supuesto</span></label>
-          <label class="choice"><input type="radio" name="baile" id="baile-poco" value="Un rato"><span>Un rato</span></label>
-          <label class="choice"><input type="radio" name="baile" id="baile-no" value="Mejor mirando"><span>Mirando</span></label>
         </div>
       </fieldset>
       <div class="field yes-only hide">
@@ -310,10 +280,6 @@ footer p{font-size:13.33px}
       <div class="field yes-only hide">
         <label for="cancion">Una canción que no puede faltar</label>
         <input type="text" id="cancion" name="cancion">
-      </div>
-      <div class="field">
-        <label for="consejo">Un consejo para los novios</label>
-        <textarea id="consejo" name="consejo"></textarea>
       </div>
       <div class="field">
         <label for="mensaje">Un mensaje para María y Marc</label>
@@ -364,19 +330,13 @@ footer p{font-size:13.33px}
       var pick=function(n){var x=f.querySelector('input[name='+n+']:checked');return x?x.value:''};
       lines.push('Adultos: '+f.personas.value);
       if(f.acomp.value.trim())lines.push('Acompañantes: '+f.acomp.value.trim());
-      if(f.ninos.value.trim())lines.push('Niños: '+f.ninos.value.trim());
-      if(pick('partes'))lines.push('Asistirá a: '+pick('partes'));
       if(pick('transporte'))lines.push('Transporte iglesia–masía: '+pick('transporte'));
-      if(pick('dormir'))lines.push('Se queda a dormir: '+pick('dormir'));
       if(f.alergias.value.trim())lines.push('Alergias / dieta: '+f.alergias.value.trim());
       if(pick('menu'))lines.push('Menú: '+pick('menu'));
-      if(f.ciudad.value.trim())lines.push('Viene desde: '+f.ciudad.value.trim());
       if(pick('antes'))lines.push('Llega el día antes: '+pick('antes'));
-      if(pick('baile'))lines.push('Baile: '+pick('baile'));
       if(f.necesidades.value.trim())lines.push('A tener en cuenta: '+f.necesidades.value.trim());
       if(f.cancion.value.trim())lines.push('Canción: '+f.cancion.value.trim());
     }
-    if(f.consejo.value.trim())lines.push('Consejo: '+f.consejo.value.trim());
     if(f.mensaje.value.trim())lines.push('Mensaje: '+f.mensaje.value.trim());
     var text=lines.join('\n');
     document.getElementById('sum').textContent=text;
