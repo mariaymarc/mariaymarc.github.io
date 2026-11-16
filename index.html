@@ -108,7 +108,8 @@ fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
 .field legend{margin-bottom:12px}
 .err:empty{display:none}
 form .btn{margin-top:4px}
-input[type=text],textarea,select{font:inherit;font-size:16px;line-height:20px;color:var(--text);background:rgba(255,255,255,.4);border:0;border-bottom:1px solid var(--text);padding:10px 4px;width:100%;border-radius:0;-webkit-appearance:none;appearance:none;letter-spacing:-.01em}
+input[type=text],textarea,select{font:inherit;font-size:16px;line-height:20px;color:var(--text);background:rgba(255,255,255,.4);border:1px solid var(--rule);padding:10px 10px;width:100%;border-radius:0;-webkit-appearance:none;appearance:none;letter-spacing:-.01em}
+input[type=text]:focus,textarea:focus,select:focus{outline:none;border-color:var(--olive)}
 textarea{min-height:96px;resize:vertical;border:1px solid var(--rule)}
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .choices.three{grid-template-columns:repeat(3,1fr)}
