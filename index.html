@@ -67,7 +67,8 @@ p{margin:0}
 .nav ul{list-style:none;margin:0 auto;padding:20px var(--side) 22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1px 6px}
 .nav .br{flex-basis:100%;height:0}
 .nav .r2a{margin-left:auto}
-.nav .r2b{margin-right:auto;margin-left:max(10px,calc((100vw - 342px) / 2 - 6px))}
+.nav .r2b{margin-right:auto}
+.nav .r2m,.nav .r2b{margin-left:max(10px,calc((100vw - 342px) / 2))}
 .nav a{display:inline-block;text-decoration:none;font-size:16px;line-height:32px;padding:0 10px;margin:0 -10px;border-radius:0;transition:background .2s,color .2s}
 .nav a:hover,.nav a:focus-visible{background:var(--olive);color:var(--cream);-webkit-text-stroke-color:var(--cream)}
 
@@ -171,7 +172,7 @@ footer .credit a{color:inherit;text-decoration:underline;text-underline-offset:2
   .hero .date{margin-top:56px}
   .nav ul{max-width:calc(640px + 2 * var(--side));gap:1px 24px;justify-content:space-between}
   .nav .br{display:none}
-  .nav .r2a,.nav .r2b{margin:0}
+  .nav .r2a,.nav .r2b,.nav .r2m{margin:0}
   section{padding:72px var(--side) 80px}
   .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
   .gallery img.wide{grid-column:1/-1;aspect-ratio:16/9}
@@ -206,6 +207,7 @@ footer .credit a{color:inherit;text-decoration:underline;text-underline-offset:2
     <li><a class="d" href="#como-llegar">Cómo llegar</a></li>
     <li class="br" aria-hidden="true"></li>
     <li class="r2a"><a class="d" href="#programa">Programa</a></li>
+    <li class="r2m"><a class="d" href="#regalo">Regalos</a></li>
     <li class="r2b"><a class="d" href="#rsvp">RSVP</a></li>
   </ul>
 </nav>
