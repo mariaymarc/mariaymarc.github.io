@@ -252,6 +252,7 @@ footer .credit a{color:inherit;text-decoration:underline;text-underline-offset:2
 <section id="rsvp">
   <div class="inner">
     <h2 class="d"><span class="n">V.</span><span class="t">¿Nos acompañas?</span></h2>
+    <p class="body">Celebración solo para adultos.</p>
     <form id="f" novalidate>
       <div class="field">
         <label for="nombre">Nombre y apellidos</label>
@@ -268,12 +269,15 @@ footer .credit a{color:inherit;text-decoration:underline;text-underline-offset:2
           <label class="choice"><input type="radio" name="asiste" id="asiste-no" value="no"><span>No podré ir</span></label>
         </div>
       </fieldset>
-      <div class="field yes-only hide">
-        <label for="personas">Adultos, contándote</label>
-        <select id="personas" name="personas"><option>1</option><option>2</option><option>3</option><option>4</option></select>
-      </div>
-      <div class="field yes-only hide">
-        <label for="acomp">Nombre de tus acompañantes</label>
+      <fieldset class="field yes-only hide">
+        <legend>¿Vienes con acompañante?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="plusone" id="plusone-si" value="Sí"><span>Sí, +1</span></label>
+          <label class="choice"><input type="radio" name="plusone" id="plusone-no" value="No"><span>No, vengo solo/a</span></label>
+        </div>
+      </fieldset>
+      <div class="field yes-only plus-only hide">
+        <label for="acomp">Nombre y apellidos de tu acompañante</label>
         <input type="text" id="acomp" name="acomp">
       </div>
       <fieldset class="field yes-only hide">
@@ -284,8 +288,8 @@ footer .credit a{color:inherit;text-decoration:underline;text-underline-offset:2
         </div>
       </fieldset>
       <div class="field yes-only hide">
-        <label for="alergias">Alergias o dieta especial</label>
-        <input type="text" id="alergias" name="alergias" placeholder="Vegetariano, sin gluten…">
+        <label for="alergias">Alergias o intolerancias</label>
+        <input type="text" id="alergias" name="alergias" placeholder="Tuyas o de tu acompañante: gluten, lactosa…">
       </div>
       <fieldset class="field yes-only hide">
         <legend>Menú</legend>
@@ -304,7 +308,7 @@ footer .credit a{color:inherit;text-decoration:underline;text-underline-offset:2
       </fieldset>
       <div class="field yes-only hide">
         <label for="necesidades">¿Algo que debamos saber?</label>
-        <input type="text" id="necesidades" name="necesidades" placeholder="Movilidad, carrito de bebé…">
+        <input type="text" id="necesidades" name="necesidades" placeholder="Movilidad, horarios…">
       </div>
       <div class="field yes-only hide">
         <label for="cancion">Una canción que no puede faltar</label>
@@ -347,7 +351,8 @@ footer .credit a{color:inherit;text-decoration:underline;text-underline-offset:2
   var yes=document.querySelectorAll('.yes-only');
   f.addEventListener('change',function(){
     var v=(f.querySelector('input[name=asiste]:checked')||{}).value;
-    yes.forEach(function(x){x.classList.toggle('hide',v!=='si')});
+    var p=(f.querySelector('input[name=plusone]:checked')||{}).value;
+    yes.forEach(function(x){x.classList.toggle('hide',v!=='si'||(x.classList.contains('plus-only')&&p!=='Sí'))});
   });
   f.addEventListener('submit',function(e){
     e.preventDefault();
@@ -358,10 +363,9 @@ footer .credit a{color:inherit;text-decoration:underline;text-underline-offset:2
     var lines=['Boda María & Marc · 26.06.2027','Nombre: '+n];if(f.contacto.value.trim())lines.push('Contacto: '+f.contacto.value.trim());lines.push('Asistencia: '+(a==='si'?'Sí':'No'));
     if(a==='si'){
       var pick=function(n){var x=f.querySelector('input[name='+n+']:checked');return x?x.value:''};
-      lines.push('Adultos: '+f.personas.value);
-      if(f.acomp.value.trim())lines.push('Acompañantes: '+f.acomp.value.trim());
+      var po=pick('plusone');if(po)lines.push('Acompañante: '+(po==='Sí'?(f.acomp.value.trim()||'Sí'):'No'));
       if(pick('transporte'))lines.push('Transporte iglesia–masía: '+pick('transporte'));
-      if(f.alergias.value.trim())lines.push('Alergias / dieta: '+f.alergias.value.trim());
+      if(f.alergias.value.trim())lines.push('Alergias / intolerancias: '+f.alergias.value.trim());
       if(pick('menu'))lines.push('Menú: '+pick('menu'));
       if(pick('antes'))lines.push('Llega el día antes: '+pick('antes'));
       if(f.necesidades.value.trim())lines.push('A tener en cuenta: '+f.necesidades.value.trim());
